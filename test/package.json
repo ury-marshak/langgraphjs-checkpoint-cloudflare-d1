@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@langchain/langgraph-checkpoint-validation": "file:~/sources/langgraphjs/libs/checkpoint-validation"
+    "@langchain/langgraph-checkpoint-validation": "file:../reference-codebase/langgraphjs/libs/checkpoint-validation"
   }
 }

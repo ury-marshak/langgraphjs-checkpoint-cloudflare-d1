@@ -652,28 +652,26 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@langchain/core@^0.3.72":
-  version "0.3.72"
-  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-0.3.72.tgz#725e2fc863c45672862c8486083e5703557ab422"
-  integrity sha512-WsGWVZYnlKffj2eEfDocPNiaTRoxyYiLSQdQ7oxZvxGZBqo/90vpjbC33UGK1uPNBM4kT+pkdaol/MnvKUh8TQ==
+"@langchain/core@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@langchain/core/-/core-1.1.4.tgz#73160c719ef99c77301fb66c7cd4a3995dcc790c"
+  integrity sha512-AZVHVoLJzhHU/jsjeNto1pvfHaPxGT+V3PcVyvUw0kCiWftdu1bxfwhwSsZJ9B9iJeXJdCIUe089+NYd3FsEuw==
   dependencies:
     "@cfworker/json-schema" "^4.0.2"
     ansi-styles "^5.0.0"
     camelcase "6"
     decamelize "1.2.0"
     js-tiktoken "^1.0.12"
-    langsmith "^0.3.46"
+    langsmith "^0.3.64"
     mustache "^4.2.0"
     p-queue "^6.6.2"
-    p-retry "4"
     uuid "^10.0.0"
-    zod "^3.25.32"
-    zod-to-json-schema "^3.22.3"
+    zod "^3.25.76 || ^4"
 
-"@langchain/langgraph-checkpoint@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@langchain/langgraph-checkpoint/-/langgraph-checkpoint-0.1.0.tgz#d2a8bd9eb831f47cfe8b74bc196004388a6083bb"
-  integrity sha512-7oY5b0VQSxcV3DgoHdXiCgBhEzml/ZjZfKNeuq6oZ3ggcdUICa/fzrIBbFju6gxPU8ly93s0OsjF4yURnHw70Q==
+"@langchain/langgraph-checkpoint@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@langchain/langgraph-checkpoint/-/langgraph-checkpoint-1.0.0.tgz#ece2ede439d0d0b0b532c4be7817fd5029afe4f8"
+  integrity sha512-xrclBGvNCXDmi0Nz28t3vjpxSH6UYx6w5XAXSiiB1WEdc2xD2iY/a913I3x3a31XpInUW/GGfXXfePfaghV54A==
   dependencies:
     uuid "^10.0.0"
 
@@ -1058,11 +1056,6 @@
   integrity sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==
   dependencies:
     parse-path "*"
-
-"@types/retry@0.12.0":
-  version "0.12.0"
-  resolved "https://registry.npmjs.org/@types/retry/-/retry-0.12.0.tgz"
-  integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
 
 "@types/semver@^7.5.0":
   version "7.7.0"
@@ -3201,16 +3194,15 @@ kleur@^4.1.5:
   resolved "https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz"
   integrity sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==
 
-langsmith@^0.3.46:
-  version "0.3.61"
-  resolved "https://registry.npmjs.org/langsmith/-/langsmith-0.3.61.tgz"
-  integrity sha512-b7Cpfj3xpWQO41G3xXeG6uzPzBcWfkEo5cK62WOcTqsKCchN2i42z7q45QQrbU6mdLwXp6pjRfnvr7wFu+Y5iQ==
+langsmith@^0.3.64:
+  version "0.3.84"
+  resolved "https://registry.yarnpkg.com/langsmith/-/langsmith-0.3.84.tgz#28063238455200b699a88b5a42e369096470c35b"
+  integrity sha512-6mXv89zTJ77ph/aroFVhI55YFNxsParGWNhPh1vLpma5GjnaWwkQXz3H9UBezaNEzVQOYK4mCOnIFANyccBG2A==
   dependencies:
     "@types/uuid" "^10.0.0"
     chalk "^4.1.2"
     console-table-printer "^2.12.1"
     p-queue "^6.6.2"
-    p-retry "4"
     semver "^7.6.3"
     uuid "^10.0.0"
 
@@ -3690,14 +3682,6 @@ p-queue@^6.6.2:
     eventemitter3 "^4.0.4"
     p-timeout "^3.2.0"
 
-p-retry@4:
-  version "4.6.2"
-  resolved "https://registry.npmjs.org/p-retry/-/p-retry-4.6.2.tgz"
-  integrity sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==
-  dependencies:
-    "@types/retry" "0.12.0"
-    retry "^0.13.1"
-
 p-timeout@^3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/p-timeout/-/p-timeout-3.2.0.tgz"
@@ -4028,7 +4012,7 @@ restore-cursor@^5.0.0:
     onetime "^7.0.0"
     signal-exit "^4.1.0"
 
-retry@0.13.1, retry@^0.13.1:
+retry@0.13.1:
   version "0.13.1"
   resolved "https://registry.npmjs.org/retry/-/retry-0.13.1.tgz"
   integrity sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==
@@ -5031,17 +5015,12 @@ youch@4.1.0-beta.10:
     cookie "^1.0.2"
     youch-core "^0.3.3"
 
-zod-to-json-schema@^3.22.3:
-  version "3.24.6"
-  resolved "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.24.6.tgz"
-  integrity sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg==
-
 zod@3.22.3:
   version "3.22.3"
   resolved "https://registry.npmjs.org/zod/-/zod-3.22.3.tgz"
   integrity sha512-EjIevzuJRiRPbVH4mGc8nApb/lVLKVpmUhAaR5R5doKGfAnGJ6Gr3CViAVjP+4FWSxCsybeWQdcgCtbX+7oZug==
 
-zod@^3.25.32:
-  version "3.25.76"
-  resolved "https://registry.npmjs.org/zod/-/zod-3.25.76.tgz"
-  integrity sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==
+"zod@^3.25.76 || ^4":
+  version "4.1.13"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-4.1.13.tgz#93699a8afe937ba96badbb0ce8be6033c0a4b6b1"
+  integrity sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==

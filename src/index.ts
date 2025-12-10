@@ -9,8 +9,10 @@ import {
   type SerializerProtocol,
   type PendingWrite,
   type CheckpointMetadata,
+  type ChannelVersions,
   TASKS,
   copyCheckpoint,
+  WRITES_IDX_MAP,
 } from "@langchain/langgraph-checkpoint";
 
 import { D1Database, D1PreparedStatement } from '@cloudflare/workers-types';
@@ -426,7 +428,8 @@ CREATE TABLE IF NOT EXISTS writes (
   async put(
     config: RunnableConfig,
     checkpoint: Checkpoint,
-    metadata: CheckpointMetadata
+    metadata: CheckpointMetadata,
+    _newVersions: ChannelVersions
   ): Promise<RunnableConfig> {
     await this.setup();
 
@@ -513,13 +516,16 @@ CREATE TABLE IF NOT EXISTS writes (
     const rows = await Promise.all(
       writes.map(async (write, idx) => {
         const [type, serializedWrite] = await this.serde.dumpsTyped(write[1]);
+        const channel = write[0];
+        // Use WRITES_IDX_MAP for special channels, otherwise use sequential index
+        const writeIdx = WRITES_IDX_MAP[channel] ?? idx;
         return [
           config.configurable?.thread_id,
           config.configurable?.checkpoint_ns,
           config.configurable?.checkpoint_id,
           taskId,
-          idx,
-          write[0],
+          writeIdx,
+          channel,
           type,
           serializedWrite,
         ];

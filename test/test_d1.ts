@@ -2,14 +2,6 @@ import { Miniflare } from "miniflare";
 import { CloudflareD1Saver } from "../src/index.js";
 import {
   BaseCheckpointSaver,
-  type Checkpoint,
-  type CheckpointListOptions,
-  type CheckpointTuple,
-  type SerializerProtocol,
-  type PendingWrite,
-  type CheckpointMetadata,
-  TASKS,
-  copyCheckpoint,
 } from "@langchain/langgraph-checkpoint";
 
 
@@ -43,7 +35,7 @@ const readConfig = {
 };
 
 const checkpoint = {
-    v: 1,
+    v: 4,
     ts: "2024-07-31T20:14:19.804150+00:00",
     id: "1ef4f797-8335-6428-8001-8a1503f9b875",
     channel_values: {
@@ -65,7 +57,6 @@ const checkpoint = {
             "start:node": 2
         }
     },
-    pending_sends: [],
 }
 
 console.log("Storing checkpoint");
